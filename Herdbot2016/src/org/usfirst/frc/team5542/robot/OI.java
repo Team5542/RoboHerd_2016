@@ -1,6 +1,9 @@
 package org.usfirst.frc.team5542.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Joystick.*;
 import edu.wpi.first.wpilibj.buttons.Button;
+
 import org.usfirst.frc.team5542.robot.commands.ExampleCommand;
 
 /**
@@ -15,6 +18,24 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
     
+	Joystick controller1 = new Joystick (0);
+	Joystick controller2 = new Joystick (1);
+	
+	public OI(){
+		if (controller1.getIsXbox()){
+			Joystick xbox = controller1;
+		}
+		else{
+			Joystick stick = controller1;
+		}
+		if (controller2.getIsXbox()){
+			Joystick xbox = controller2;
+		}
+		else{
+			Joystick stick = controller2;
+		}
+	}
+	
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
