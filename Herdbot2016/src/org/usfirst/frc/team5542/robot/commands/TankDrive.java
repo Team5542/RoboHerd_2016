@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TankDrive extends Command {
+public class TankDrive extends CommandBase {
 
     public TankDrive() {
         // Use requires() here to declare subsystem dependencies
