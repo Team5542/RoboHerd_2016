@@ -34,7 +34,7 @@ public class DriveTrain extends Subsystem {
 	}
 	
 	public void tankDrive(double left, double right){
-		
+		myDrive.tankDrive(left, right);
 	}
 		
     public void initDefaultCommand() {
