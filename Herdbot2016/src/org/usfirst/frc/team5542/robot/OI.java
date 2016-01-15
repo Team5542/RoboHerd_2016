@@ -3,6 +3,7 @@ package org.usfirst.frc.team5542.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.*;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team5542.robot.commands.ExampleCommand;
 
@@ -18,23 +19,59 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
     
-	Joystick controller1 = new Joystick (0);
-	Joystick controller2 = new Joystick (1);
+	
+	
+	//Controller layout
+		Joystick controller = new Joystick(0);
+		Button aButton = new JoystickButton(controller, 1);
+		Button bButton = new JoystickButton(controller, 2);
+		Button xButton = new JoystickButton(controller, 3);
+		Button yButton = new JoystickButton(controller, 4);
+		Button lBumper = new JoystickButton(controller, 5);
+		Button rBumper = new JoystickButton(controller, 6);
+		Button select = new JoystickButton(controller, 7);
+		Button start = new JoystickButton(controller, 8);
+		Button lStick = new JoystickButton(controller, 9);
+		Button rStick = new JoystickButton(controller, 10);
+
+		//axis map
+		public static final int lxAxis = 0;
+		public static final int lyAxis = 1;
+		public static final int rxAxis = 4;
+		public static final int ryAxis = 5;
+		public static final int rTrigger = 3;
+		public static final int lTrigger = 2;
+		public static final int dPad = 0;
+		
+		
+		//Joystick layout
+		Joystick stick = new Joystick(1);
+		Button trigger = new JoystickButton(stick, 1);
+		Button thumb = new JoystickButton(stick, 2);
+		Button b3 = new JoystickButton(stick, 3);
+		Button b4 = new JoystickButton(stick, 4);
+		Button b5 = new JoystickButton(stick, 5);
+		Button b6 = new JoystickButton(stick, 6);
+		Button b7 = new JoystickButton(stick, 7);
+		Button b8 = new JoystickButton(stick, 8);
+		Button b9 = new JoystickButton(stick, 9);
+		Button b10 = new JoystickButton(stick, 10);
+		Button b11 = new JoystickButton(stick, 11);
+		Button b12 = new JoystickButton(stick, 12);
+		
+		
+		//Joystick axis map
+		public static final int stickX = 0;
+		public static final int stickY = 1;
+		public static final int stickZ = 2;
+		public static final int slider = 3;
+		public static final int pov = 0;
 	
 	public OI(){
-		if (controller1.getIsXbox()){
-			Joystick xbox = controller1;
-		}
-		else{
-			Joystick stick = controller1;
-		}
-		if (controller2.getIsXbox()){
-			Joystick xbox = controller2;
-		}
-		else{
-			Joystick stick = controller2;
-		}
+		
 	}
+	
+	
 	
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
