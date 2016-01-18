@@ -5,11 +5,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ArmFeedShoot extends Command {
+public class ArmFeedShoot extends CommandBase {
 
     public ArmFeedShoot() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(arm);
     }
 
     // Called just before this Command runs the first time

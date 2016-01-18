@@ -5,11 +5,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ArmMove extends Command {
+public class ArmMove extends CommandBase {
 
     public ArmMove() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(arm);
     }
 
     // Called just before this Command runs the first time
