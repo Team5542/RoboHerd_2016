@@ -20,7 +20,7 @@ public class OI {
 	Joystick xbox;
 	Joystick stick;
 	Joystick controller1 = new Joystick(0);
-	Joystick controller2 = new Joystick(0);
+	Joystick controller2 = new Joystick(1);
 	public OI(){
 		if(controller1.getIsXbox()){
 			xbox = controller1;
