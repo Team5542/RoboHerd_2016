@@ -33,7 +33,7 @@ public class Camera extends Subsystem {
     	tilt = tilt + component;
     	tiltMotor.set(tilt);
     }
-    public void tilitDown(){
+    public void tiltDown(){
     	double tilt = tiltMotor.get();
     	tilt = tilt - component;
     	tiltMotor.set(tilt);

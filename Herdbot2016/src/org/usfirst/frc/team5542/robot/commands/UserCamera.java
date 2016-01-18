@@ -31,7 +31,7 @@ public class UserCamera extends CommandBase {
     		camera.panRight();
     	}
     	if (dpad == 180 || dpad == 135 || dpad == 225){
-    		camera.tilitDown();
+    		camera.tiltDown();
     	}
     	if (dpad == 270 || dpad == 225 || dpad == 315){
     		camera.panLeft();
