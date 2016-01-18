@@ -35,8 +35,8 @@ public class TankDrive extends CommandBase {
     		left = 0;
     	if (right < 0.05 && left > -0.05)
     		right = 0;
-    	left = left*left*100/sensitivity;
-    	right = right*right*100/sensitivity;
+    	left = left*left*20/sensitivity;
+    	right = right*right*20/sensitivity;
     	drivetrain.tankDrive(left, right);
     }
 
