@@ -1,18 +1,36 @@
 package org.usfirst.frc.team5542.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team5542.robot.OI;
+
+import edu.wpi.first.wpilibj.Joystick;
 
 /**
  *
  */
 public class UserCamera extends CommandBase {
-
+	
+	OI oi = new OI();
+	Joystick stick = oi.getStick();
+	
     public UserCamera() {
         requires(camera);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	int dpad = stick.getPOV(OI.pov);
+    	if (dpad == 0 || dpad == 45 || dpad == 315){
+    		camera.tiltUp();
+    	}
+    	if (dpad == 90 || dpad == 45 || dpad == 135){
+    		camera.panRight();
+    	}
+    	if (dpad == 180 || dpad == 135 || dpad == 225){
+    		camera.tilitDown();
+    	}
+    	if (dpad == 270 || dpad == 225 || dpad == 315){
+    		camera.panLeft();
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run

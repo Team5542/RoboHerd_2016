@@ -30,8 +30,23 @@ public class Camera extends Subsystem {
     
     public void tiltUp(){
     	double tilt = tiltMotor.get();
-    	tilt = tilt + conponent;
-    	
+    	tilt = tilt + component;
+    	tiltMotor.set(tilt);
+    }
+    public void tilitDown(){
+    	double tilt = tiltMotor.get();
+    	tilt = tilt - component;
+    	tiltMotor.set(tilt);
+    }
+    public void panRight(){
+    	double pan = panMotor.get();
+    	pan = pan + component;
+    	panMotor.set(pan);
+    }
+    public void panLeft(){
+    	double pan = panMotor.get();
+    	pan = pan - component;
+    	panMotor.set(pan);
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
