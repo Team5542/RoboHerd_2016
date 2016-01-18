@@ -21,6 +21,9 @@ public class RobotMap {
     public static int panServo = 7;
     public static int tiltServo = 8;
     
+    //Lift motors
+    public static int liftMotor = 9;
+    
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
