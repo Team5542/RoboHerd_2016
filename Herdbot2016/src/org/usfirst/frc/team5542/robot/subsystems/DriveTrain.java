@@ -36,6 +36,10 @@ public class DriveTrain extends Subsystem {
 	public void tankDrive(double left, double right){
 		myDrive.tankDrive(left, right);
 	}
+	
+	public void fprDrive(double move, double turn){
+		myDrive.arcadeDrive(move, turn);
+	}
 		
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
