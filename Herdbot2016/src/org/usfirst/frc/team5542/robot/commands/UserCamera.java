@@ -18,6 +18,11 @@ public class UserCamera extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
     	int dpad = stick.getPOV(OI.pov);
     	if (dpad == 0 || dpad == 45 || dpad == 315){
     		camera.tiltUp();
@@ -31,10 +36,6 @@ public class UserCamera extends CommandBase {
     	if (dpad == 270 || dpad == 225 || dpad == 315){
     		camera.panLeft();
     	}
-    }
-
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
     }
 
     // Make this return true when this Command no longer needs to run execute()
