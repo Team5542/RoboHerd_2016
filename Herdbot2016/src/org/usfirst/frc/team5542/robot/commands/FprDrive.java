@@ -20,11 +20,22 @@ public class FprDrive extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	OI oi = new OI();
-    	Joystick stick = oi.getStick();
-    	double y = -stick.getRawAxis(OI.stickY);
-    	double z = stick.getRawAxis(OI.stickZ);
-    	double slider = stick.getRawAxis(OI.slider);
-    	double sensitivity = slider + 1;
+    	Joystick xbox = oi.getXbox();
+    	double y = -xbox.getRawAxis(OI.lyAxis);
+    	double z = xbox.getRawAxis(OI.lxAxis);
+    	int sense = xbox.getPOV(OI.dPad);
+    	int sensitivity = 1;
+    	if (sense == 90){
+    		if(sensitivity != 2){
+    		sensitivity++;
+    		}
+    	}
+    	if (sense == 270){
+    		if(sensitivity != 1){
+    		sensitivity--;
+    		}
+    	}
+    	
     	if(y < 0.05 && y > -0.05){
     		y = 0;
     	} else {
