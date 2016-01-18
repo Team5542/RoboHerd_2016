@@ -33,6 +33,14 @@ public class DriveTrain extends Subsystem {
 		return instance;
 	}
 	
+	public void incSense(int sense){
+		sense++;
+	}
+	
+	public void decSense(int sense){
+		sense--;
+	}
+	
 	public void tankDrive(double left, double right){
 		myDrive.tankDrive(left, right);
 	}

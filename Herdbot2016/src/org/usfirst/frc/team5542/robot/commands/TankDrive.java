@@ -23,8 +23,20 @@ public class TankDrive extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Joystick xbox = Robot.oi.getXbox();
-    	double left = xbox.getRawAxis(OI.lyAxis);
-    	double right = xbox.getRawAxis(OI.ryAxis);
+    	double left = -xbox.getRawAxis(OI.lyAxis);
+    	double right = -xbox.getRawAxis(OI.ryAxis);
+    	int sense = xbox.getPOV(OI.dPad);
+    	int sensitivity = 20;
+    	if (sense == 90)
+    		drivetrain.decSense(sensitivity);
+    	if (sense == 270)
+    		drivetrain.incSense(sensitivity);
+    	if (left < 0.05 && left > -0.05)
+    		left = 0;
+    	if (right < 0.05 && left > -0.05)
+    		right = 0;
+    	left = left*left*100/sensitivity;
+    	right = right*right*100/sensitivity;
     	drivetrain.tankDrive(left, right);
     }
 
