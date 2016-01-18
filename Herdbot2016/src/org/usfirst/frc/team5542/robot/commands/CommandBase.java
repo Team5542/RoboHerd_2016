@@ -11,8 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 public abstract class CommandBase extends Command {
 
 	protected static DriveTrain drivetrain;
+	protected static Camera camera;
 	
 	public static void init(){
+		camera = Camera.getInstance();
 		drivetrain = DriveTrain.getInstance();
 	}
 }
