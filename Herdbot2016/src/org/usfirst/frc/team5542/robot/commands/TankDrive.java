@@ -28,9 +28,9 @@ public class TankDrive extends CommandBase {
     	int sense = xbox.getPOV(OI.dPad);
     	int sensitivity = 20;
     	if (sense == 90)
-    		drivetrain.decSense(sensitivity);
+    		sensitivity++;
     	if (sense == 270)
-    		drivetrain.incSense(sensitivity);
+    		sensitivity--;
     	if (left < 0.05 && left > -0.05)
     		left = 0;
     	if (right < 0.05 && left > -0.05)
