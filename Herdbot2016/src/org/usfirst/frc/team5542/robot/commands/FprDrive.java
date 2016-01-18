@@ -25,12 +25,12 @@ public class FprDrive extends CommandBase {
     	double z = stick.getRawAxis(OI.stickZ);
     	double slider = stick.getRawAxis(OI.slider);
     	double sensitivity = slider + 1;
-    	if(y < 0.05){
+    	if(y < 0.05 && y > -0.05){
     		y = 0;
     	} else {
     		y = Math.pow(y, sensitivity);
     	}
-    	if(z < 0.05){
+    	if(z < 0.05 && z > -0.05){
     		z = 0;
     	} else {
     		z = Math.pow(z, sensitivity);
