@@ -1,5 +1,7 @@
 package org.usfirst.frc.team5542.robot;
 
+import org.usfirst.frc.team5542.robot.commands.CenterCamera;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -30,6 +32,7 @@ public class OI {
 		} else {
 			stick = controller2;
 		}
+		thumb.whenPressed(new CenterCamera());
 	}
 	
 	//Controller layout

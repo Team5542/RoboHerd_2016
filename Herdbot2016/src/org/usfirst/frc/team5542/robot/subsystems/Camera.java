@@ -48,6 +48,10 @@ public class Camera extends Subsystem {
     	pan = pan - component;
     	panMotor.set(pan);
     }
+    public void CenterCamera(double pan, double tilt){
+    	panMotor.set(pan);
+    	tiltMotor.set(tilt);
+    }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
