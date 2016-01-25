@@ -15,12 +15,11 @@ public class Arm extends Subsystem {
     // here. Call these from Commands.
 	
 	private RobotDrive intakeDrive;
-	private CANTalon ltMotor, rtMotor,liftMotor;
+	private CANTalon ltMotor, rtMotor;
 	
 	private Arm(){
 		ltMotor = new CANTalon(RobotMap.ltMotor);
 		rtMotor = new CANTalon(RobotMap.rtMotor);
-		liftMotor = new CANTalon(RobotMap.liftMotor);
 		intakeDrive = new RobotDrive(RobotMap.ltMotor, RobotMap.rtMotor);
 	}
 	
@@ -32,9 +31,6 @@ public class Arm extends Subsystem {
 		return instance;
 	}
 	
-	public void moveArm(double move){
-		liftMotor.set(move);
-	}
 	
 	public void intake(double move, double turn){
 		intakeDrive.arcadeDrive(move, turn);
