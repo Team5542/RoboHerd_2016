@@ -38,11 +38,11 @@ public class ReciveData extends CommandBase {
 			while ((message = s_in.readLine()) != null) 
 			{
 			   if(message.equalsIgnoreCase("up")){
-				   
+				   pi.up();
 			   }  else if(message.equalsIgnoreCase("down")){
-				   
+				   pi.down();
 			   }  else {
-				   
+				   pi.stop();
 			   }
 			}
 		} catch (IOException e) {
