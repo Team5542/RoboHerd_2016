@@ -24,9 +24,12 @@ public class ArmFeedShoot extends CommandBase {
     protected void execute() {
     	Joystick stick = Robot.oi.getStick();
     	double move = stick.getRawAxis(OI.stickZ);
-    	if (move < 0.05 && move >-0.05)
+    	if (move < 0.05 && move >-0.05){
     		move = 0;
-    	arm.intake(move, 0);
+    	arm.intake();
+    	} else {
+    		arm.stop();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -41,6 +44,6 @@ public class ArmFeedShoot extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	arm.intake(0, 0);
+    	arm.stop();
     }
 }
