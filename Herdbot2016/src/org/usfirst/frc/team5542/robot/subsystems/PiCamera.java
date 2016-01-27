@@ -11,10 +11,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class PiCamera extends Subsystem {
 	public static PiCamera instance;
 	
+	private CANTalon ltMotor, rtMotor;
+	
 	CANTalon liftMotor;
 	
 	private PiCamera(){
 	liftMotor = new CANTalon(RobotMap.liftMotor);
+	ltMotor = new CANTalon(RobotMap.ltMotor);
+	rtMotor = new CANTalon(RobotMap.rtMotor);
 	}
 	
 	public static PiCamera getInstance(){
@@ -30,6 +34,12 @@ public class PiCamera extends Subsystem {
     }
     public void stop(){
     	liftMotor.set(0);
+    	ltMotor.set(0);
+    	rtMotor.set(0);
+    }
+    public void shot(){
+    	ltMotor.set(-1);
+    	ltMotor.set(1);
     }
 
     public void initDefaultCommand() {

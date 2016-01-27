@@ -30,14 +30,11 @@ public class Arm extends Subsystem {
 	}
 	
 	
-	public void intake(){
-		ltMotor.set(1);
-		rtMotor.set(-1);
+	public void intake(double move){
+		ltMotor.set(move);
+		rtMotor.set(-move);
 	}
-	public void stop(){
-		ltMotor.set(0);
-		rtMotor.set(0);
-	}
+	
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
