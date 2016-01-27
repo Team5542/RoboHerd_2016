@@ -4,7 +4,6 @@ import org.usfirst.frc.team5542.robot.OI;
 import org.usfirst.frc.team5542.robot.Robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
