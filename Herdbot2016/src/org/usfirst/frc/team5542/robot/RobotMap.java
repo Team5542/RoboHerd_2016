@@ -9,8 +9,8 @@ public class RobotMap {
 	// Driver motors, with l=left, r=right, f=front, b=back
     
 	public static int lfMotor = 1;
-    public static int rfMotor = 2;
-    public static int lbMotor = 3;
+    public static int rfMotor = 3;
+    public static int lbMotor = 2;
     public static int rbMotor = 4;
 	
     // Throwing motors
