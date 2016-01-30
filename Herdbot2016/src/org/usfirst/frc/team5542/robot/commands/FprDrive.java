@@ -3,6 +3,7 @@ package org.usfirst.frc.team5542.robot.commands;
 import org.usfirst.frc.team5542.robot.OI;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -29,7 +30,9 @@ public class FprDrive extends CommandBase {
     	} 
     	if(z < 0.10 && z > -0.10){
     		z = 0;
-    	} 
+    	}
+    	SmartDashboard.putNumber("Move Value", y);
+    	SmartDashboard.putNumber("Turn Value", z);
     	drivetrain.fprDrive(y, z);
     }
 
