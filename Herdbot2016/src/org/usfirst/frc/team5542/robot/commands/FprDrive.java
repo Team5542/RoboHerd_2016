@@ -23,29 +23,13 @@ public class FprDrive extends CommandBase {
     	Joystick xbox = oi.getXbox();
     	double y = -xbox.getRawAxis(OI.lyAxis);
     	double z = xbox.getRawAxis(OI.lxAxis);
-    	int sense = xbox.getPOV(OI.dPad);
-    	int sensitivity = 1;
-    	if (sense == 90){
-    		if(sensitivity != 2){
-    		sensitivity++;
-    		}
-    	}
-    	if (sense == 270){
-    		if(sensitivity != 1){
-    		sensitivity--;
-    		}
-    	}
     	
-    	if(y < 0.05 && y > -0.05){
+    	if(y < 0.10 && y > -0.10){
     		y = 0;
-    	} else {
-    		y = Math.pow(y, sensitivity);
-    	}
-    	if(z < 0.05 && z > -0.05){
+    	} 
+    	if(z < 0.10 && z > -0.10){
     		z = 0;
-    	} else {
-    		z = Math.pow(z, sensitivity);
-    	}
+    	} 
     	drivetrain.fprDrive(y, z);
     }
 

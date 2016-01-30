@@ -33,8 +33,8 @@ public class OI {
 		} else {
 			stick = controller2;
 		}
-		thumb.whenPressed(new CenterCamera());
-		trigger.whenPressed(new Fire());
+		//thumb.whenPressed(new CenterCamera());
+		//trigger.whenPressed(new Fire());
 	}
 	
 	//Controller layout

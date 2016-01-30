@@ -5,6 +5,7 @@ import org.usfirst.frc.team5542.robot.commands.FprDrive;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -23,6 +24,7 @@ public class DriveTrain extends Subsystem {
 		lbMotor = new CANTalon(RobotMap.lbMotor);
 		rbMotor = new CANTalon(RobotMap.rbMotor);
 		myDrive = new RobotDrive(lfMotor, rfMotor, lbMotor, rbMotor);
+		myDrive.setInvertedMotor(MotorType.kFrontRight, true);
 	}
 	
 	public static DriveTrain instance;
