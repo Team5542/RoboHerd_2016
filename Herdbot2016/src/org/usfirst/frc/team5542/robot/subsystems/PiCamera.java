@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5542.robot.subsystems;
 
 import org.usfirst.frc.team5542.robot.RobotMap;
+import org.usfirst.frc.team5542.robot.commands.ReciveData;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
@@ -94,8 +95,7 @@ public class PiCamera extends Subsystem {
     	return gyro.getAngle();
     }
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ReciveData());
     }
 }
 
