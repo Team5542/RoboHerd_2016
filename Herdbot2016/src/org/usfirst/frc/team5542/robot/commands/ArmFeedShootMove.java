@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.Joystick;
 /**
  *
  */
-public class ArmFeedShoot extends CommandBase {
+public class ArmFeedShootMove extends CommandBase {
 
-    public ArmFeedShoot() {
+    public ArmFeedShootMove() {
         // Use requires() here to declare subsystem dependencies
         requires(arm);
     }
@@ -23,9 +23,11 @@ public class ArmFeedShoot extends CommandBase {
     protected void execute() {
     	Joystick stick = Robot.oi.getStick();
     	double move = stick.getRawAxis(OI.stickY);
-    	if (move > 0.01 && move <-0.01 && move < .05 && move > -.05){
-    		move = 0;
-    	arm.intake(move);
+    	if(move > 0.5){
+    		arm.moveDown();
+    	}
+    	if(move < -0.5){
+    		arm.moveUp();
     	}
     }
 

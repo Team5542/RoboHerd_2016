@@ -3,6 +3,9 @@ package org.usfirst.frc.team5542.robot;
 //import org.usfirst.frc.team5542.robot.commands.CenterCamera;
 //import org.usfirst.frc.team5542.robot.commands.Fire;
 
+import org.usfirst.frc.team5542.robot.commands.Intake;
+import org.usfirst.frc.team5542.robot.commands.Outake;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -33,8 +36,8 @@ public class OI {
 		} else {
 			stick = controller2;
 		}
-		//thumb.whenPressed(new CenterCamera());
-		//trigger.whenPressed(new Fire());
+		trigger.whileHeld(new Intake());
+		thumb.whileHeld(new Outake());
 	}
 	
 	//Controller layout
