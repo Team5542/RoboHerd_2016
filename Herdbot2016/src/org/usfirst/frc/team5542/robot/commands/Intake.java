@@ -11,7 +11,7 @@ public class Intake extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	arm.intake(1);
+    	arm.intake(.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
