@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5542.robot;
 
 //import org.usfirst.frc.team5542.robot.commands.CenterCamera;
-//import org.usfirst.frc.team5542.robot.commands.Fire;
+import org.usfirst.frc.team5542.robot.commands.Fire;
 
 import org.usfirst.frc.team5542.robot.commands.Intake;
 import org.usfirst.frc.team5542.robot.commands.Outake;
@@ -38,6 +38,7 @@ public class OI {
 		}
 		trigger.whileHeld(new Intake());
 		thumb.whileHeld(new Outake());
+		b3.whenPressed(new Fire());
 	}
 	
 	//Controller layout
