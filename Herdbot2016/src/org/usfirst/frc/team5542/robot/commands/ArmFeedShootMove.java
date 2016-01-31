@@ -24,10 +24,13 @@ public class ArmFeedShootMove extends CommandBase {
     	Joystick stick = Robot.oi.getStick();
     	double move = stick.getRawAxis(OI.stickY);
     	if(move > 0.5){
-    		//arm.moveDown();
+    		arm.moveDown();
     	}
     	if(move < -0.5){
-    		//arm.moveUp();
+    		arm.moveUp();
+    	}
+    	if(0.5 > move && move > -.05){
+    		
     	}
     }
 
