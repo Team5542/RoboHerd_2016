@@ -28,6 +28,8 @@ public class PiCamera extends Subsystem {
 	CANTalon liftMotor;
 	
 	private PiCamera(){
+	tiltServo = new Servo(RobotMap.tiltservo2);
+	panServo = new Servo(RobotMap.panServo2);
 	liftMotor = new CANTalon(RobotMap.liftMotor);
 	ltMotor = new CANTalon(RobotMap.ltMotor);
 	rtMotor = new CANTalon(RobotMap.rtMotor);
