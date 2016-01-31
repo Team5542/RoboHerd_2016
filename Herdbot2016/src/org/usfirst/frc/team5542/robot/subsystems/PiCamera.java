@@ -2,9 +2,11 @@ package org.usfirst.frc.team5542.robot.subsystems;
 
 import org.usfirst.frc.team5542.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -13,9 +15,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class PiCamera extends Subsystem {
 	public static PiCamera instance;
 	
-	private CANTalon ltMotor, rtMotor;
+	private CANTalon ltMotor, rtMotor, aMotor;
 	
 	private Servo panServo, tiltServo;
+	
+	private Gyro gyro;
 	
 	double tilt;
 	double pan;
@@ -26,6 +30,8 @@ public class PiCamera extends Subsystem {
 	liftMotor = new CANTalon(RobotMap.liftMotor);
 	ltMotor = new CANTalon(RobotMap.ltMotor);
 	rtMotor = new CANTalon(RobotMap.rtMotor);
+	aMotor = new CANTalon(RobotMap.liftMotor);
+	gyro = new AnalogGyro(RobotMap.gyro);
 	}
 	
 	public static PiCamera getInstance(){
@@ -72,7 +78,21 @@ public class PiCamera extends Subsystem {
     	ltMotor.set(-1);
     	rtMotor.set(1);
     }
-
+    public void fire(){
+    	double tiltAngle = tiltServo.getAngle();
+    	while(tiltAngle > getGyro()){
+    		aMotor.set(0.5);
+    	}
+    	while(tiltAngle < getGyro()){
+    		aMotor.set(-0.5);
+    	}
+    	if(tiltAngle == getGyro()){
+    		shot();
+    	}
+    }
+    public double getGyro(){
+    	return gyro.getAngle();
+    }
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());

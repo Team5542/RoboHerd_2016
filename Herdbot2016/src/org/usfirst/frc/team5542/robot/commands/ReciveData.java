@@ -49,6 +49,10 @@ public class ReciveData extends CommandBase {
 				   pi.panRight();
 			   } else if(message.equalsIgnoreCase("sLeft")){
 				   pi.panLeft();
+			   } else if(message.equalsIgnoreCase("shot")){
+				   pi.fire();
+			   } else {
+				   pi.shot();
 			   }
 			}
 		} catch (IOException e) {
