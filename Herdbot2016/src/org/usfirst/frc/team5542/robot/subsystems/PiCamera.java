@@ -30,7 +30,7 @@ public class PiCamera extends Subsystem {
     	liftMotor.set(0.2);
     }
     public void down(){
-    	liftMotor.set(-0.02);
+    	liftMotor.set(-0.2);
     }
     public void stop(){
     	liftMotor.set(0);
@@ -39,7 +39,7 @@ public class PiCamera extends Subsystem {
     }
     public void shot(){
     	ltMotor.set(-1);
-    	ltMotor.set(1);
+    	rtMotor.set(1);
     }
 
     public void initDefaultCommand() {
