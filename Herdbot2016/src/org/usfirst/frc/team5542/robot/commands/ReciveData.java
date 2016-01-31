@@ -39,10 +39,16 @@ public class ReciveData extends CommandBase {
 			{
 			   if(message.equalsIgnoreCase("up")){
 				   pi.up();
-			   }  else if(message.equalsIgnoreCase("down")){
+			   } else if(message.equalsIgnoreCase("down")){
 				   pi.down();
-			   }  else {
-				   pi.stop();
+			   } else if(message.equalsIgnoreCase("sUp")){
+				   pi.tiltUp();
+			   } else if(message.equalsIgnoreCase("sDown")){
+				   pi.tiltDown();
+			   } else if(message.equalsIgnoreCase("sRight")){
+				   pi.panRight();
+			   } else if(message.equalsIgnoreCase("sLeft")){
+				   pi.panLeft();
 			   }
 			}
 		} catch (IOException e) {
