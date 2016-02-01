@@ -36,24 +36,38 @@ public class OI {
 		} else {
 			stick = controller2;
 		}
+		//Controller layout
+		//Button aButton = new JoystickButton(xbox, 1);
+		//Button bButton = new JoystickButton(xbox, 2);
+		//Button xButton = new JoystickButton(xbox, 3);
+		//Button yButton = new JoystickButton(xbox, 4);
+		//Button lBumper = new JoystickButton(xbox, 5);
+		//Button rBumper = new JoystickButton(xbox, 6);
+		//Button select = new JoystickButton(xbox, 7);
+		//Button start = new JoystickButton(xbox, 8);
+		//Button lStick = new JoystickButton(xbox, 9);
+		//Button rStick = new JoystickButton(xbox, 10);
+		
+		//Joystick layout
+		Button trigger = new JoystickButton(stick, 1);
+		Button thumb = new JoystickButton(stick, 2);
+		Button b3 = new JoystickButton(stick, 3);
+		Button b4 = new JoystickButton(stick, 4);
+		//Button b5 = new JoystickButton(stick, 5);
+		//Button b6 = new JoystickButton(stick, 6);
+		//Button b7 = new JoystickButton(stick, 7);
+		//Button b8 = new JoystickButton(stick, 8);
+		//Button b9 = new JoystickButton(stick, 9);
+		//Button b10 = new JoystickButton(stick, 10);
+		//Button b11 = new JoystickButton(stick, 11);
+		//Button b12 = new JoystickButton(stick, 12);
+		
 		trigger.whileHeld(new Intake());
 		thumb.whileHeld(new Outake());
 		b3.whenPressed(new Fire());
 		b4.whenPressed(new ArmStop());
 	}
 	
-	//Controller layout
-		Button aButton = new JoystickButton(xbox, 1);
-		Button bButton = new JoystickButton(xbox, 2);
-		Button xButton = new JoystickButton(xbox, 3);
-		Button yButton = new JoystickButton(xbox, 4);
-		Button lBumper = new JoystickButton(xbox, 5);
-		Button rBumper = new JoystickButton(xbox, 6);
-		Button select = new JoystickButton(xbox, 7);
-		Button start = new JoystickButton(xbox, 8);
-		Button lStick = new JoystickButton(xbox, 9);
-		Button rStick = new JoystickButton(xbox, 10);
-
 		//axis map
 		public static final int lxAxis = 0;
 		public static final int lyAxis = 1;
@@ -62,22 +76,6 @@ public class OI {
 		public static final int rTrigger = 3;
 		public static final int lTrigger = 2;
 		public static final int dPad = 0;
-		
-		
-		//Joystick layout
-		Button trigger = new JoystickButton(stick, 1);
-		Button thumb = new JoystickButton(stick, 2);
-		Button b3 = new JoystickButton(stick, 3);
-		Button b4 = new JoystickButton(stick, 4);
-		Button b5 = new JoystickButton(stick, 5);
-		Button b6 = new JoystickButton(stick, 6);
-		Button b7 = new JoystickButton(stick, 7);
-		Button b8 = new JoystickButton(stick, 8);
-		Button b9 = new JoystickButton(stick, 9);
-		Button b10 = new JoystickButton(stick, 10);
-		Button b11 = new JoystickButton(stick, 11);
-		Button b12 = new JoystickButton(stick, 12);
-		
 		
 		//Joystick axis map
 		public static final int stickX = 0;
