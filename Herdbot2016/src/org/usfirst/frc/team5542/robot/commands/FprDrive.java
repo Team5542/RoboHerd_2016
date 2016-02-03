@@ -23,7 +23,7 @@ public class FprDrive extends CommandBase {
     	OI oi = new OI();
     	Joystick xbox = oi.getXbox();
     	double y = -xbox.getRawAxis(OI.lyAxis);
-    	double z = xbox.getRawAxis(OI.lxAxis);
+    	double z = -xbox.getRawAxis(OI.lxAxis);
     	
     	if(y < 0.10 && y > -0.10){
     		y = 0;
