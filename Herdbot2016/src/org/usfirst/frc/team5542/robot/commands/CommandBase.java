@@ -16,9 +16,9 @@ public abstract class CommandBase extends Command {
 	protected static PiCamera pi;
 	
 	public static void init(){
-		camera = Camera.getInstance();
+		//camera = Camera.getInstance();
 		drivetrain = DriveTrain.getInstance();
 		arm = Arm.getInstance();
-		pi = PiCamera.getInstance();
+		//pi = PiCamera.getInstance();
 	}
 }
