@@ -48,5 +48,6 @@ public class FprDrive extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	drivetrain.fprDrive(0, 0);
     }
 }
