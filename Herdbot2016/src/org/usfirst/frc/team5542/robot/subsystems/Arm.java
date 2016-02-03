@@ -49,12 +49,12 @@ public class Arm extends Subsystem {
 		aMotor.set(-0.5);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
-	//public void stop(){
+	public void stop(){
 		//if(SmartDashboard.getNumber("Gyro") > gyro.getAngle()){
 			//aMotor.set(0.25);
 		//} else {
-			//aMotor.set(0);
-		//}
+			aMotor.set(0);
+		}
 	//}
 	
     public void initDefaultCommand() {
