@@ -24,7 +24,6 @@ public class DriveTrain extends Subsystem {
 		lbMotor = new CANTalon(RobotMap.lbMotor);
 		rbMotor = new CANTalon(RobotMap.rbMotor);
 		myDrive = new RobotDrive(lfMotor, lbMotor, rfMotor, rbMotor);
-		myDrive.setInvertedMotor(MotorType.kFrontRight, true);
 	}
 	
 	public static DriveTrain instance;
