@@ -2,7 +2,7 @@ package org.usfirst.frc.team5542.robot;
 
 //import org.usfirst.frc.team5542.robot.commands.CenterCamera;
 import org.usfirst.frc.team5542.robot.commands.ArmStop;
-import org.usfirst.frc.team5542.robot.commands.Fire;
+//import org.usfirst.frc.team5542.robot.commands.Fire;
 import org.usfirst.frc.team5542.robot.commands.Intake;
 import org.usfirst.frc.team5542.robot.commands.Outake;
 
@@ -51,7 +51,7 @@ public class OI {
 		//Joystick layout
 		Button trigger = new JoystickButton(stick, 1);
 		Button thumb = new JoystickButton(stick, 2);
-		Button b3 = new JoystickButton(stick, 3);
+		//Button b3 = new JoystickButton(stick, 3);
 		Button b4 = new JoystickButton(stick, 4);
 		//Button b5 = new JoystickButton(stick, 5);
 		//Button b6 = new JoystickButton(stick, 6);
@@ -64,7 +64,7 @@ public class OI {
 		
 		trigger.whileHeld(new Intake());
 		thumb.whileHeld(new Outake());
-		b3.whenPressed(new Fire());
+		//b3.whenPressed(new Fire());
 		b4.whenPressed(new ArmStop());
 	}
 	
