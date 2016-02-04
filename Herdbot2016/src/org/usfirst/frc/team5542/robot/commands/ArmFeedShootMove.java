@@ -29,7 +29,7 @@ public class ArmFeedShootMove extends CommandBase {
     	if(move < -0.5){
     		arm.moveUp();
     	}
-    	if(0.5 <= move && move >= -.5){
+    	if(0.5 >= move && move >= -.5){
     		arm.stop();
     	}
     }

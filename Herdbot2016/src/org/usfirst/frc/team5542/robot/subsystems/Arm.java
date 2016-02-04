@@ -42,11 +42,11 @@ public class Arm extends Subsystem {
 		rtMotor.set(-move);
 	}
 	public void moveUp(){
-		aMotor.set(0.5);
+		aMotor.set(0.2);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void moveDown(){
-		aMotor.set(-0.5);
+		aMotor.set(-0.2);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stop(){
