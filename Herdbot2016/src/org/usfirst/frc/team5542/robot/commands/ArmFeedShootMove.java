@@ -29,7 +29,7 @@ public class ArmFeedShootMove extends CommandBase {
     	if(move < -0.5){
     		arm.moveUp();
     	}
-    	if(0.5 > move && move > -.05){
+    	if(0.5 <= move && move >= -.5){
     		arm.stop();
     	}
     }
@@ -41,11 +41,13 @@ public class ArmFeedShootMove extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+    	arm.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	arm.intake(0);
+    	arm.stop();
     }
 }
