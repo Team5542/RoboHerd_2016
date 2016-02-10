@@ -22,6 +22,18 @@ public class Encoder extends PIDSubsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    // Sets pid goal to travel for going under objects
+    // !!! NEED TO RESET EACH TIME ROBOT IS INIT !!!
+    public void lowTravel(){
+    	this.setSetpoint(0);
+    }
+    
+    // Sets pid goal to travel for going over objects
+    // !!! NEED TO DETERMINE THIS VALUE !!!
+    public void highTravel(){
+    	this.setSetpoint(25);
+    }
+    
     protected double returnPIDInput() {
         // Return your input value for the PID loop
         // e.g. a sensor, like a potentiometer:
