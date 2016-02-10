@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Arm extends Subsystem {
+public class Manual extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -21,18 +21,18 @@ public class Arm extends Subsystem {
 	
 	//private Gyro gyro;
 	
-	private Arm(){
+	private Manual(){
 		ltMotor = new CANTalon(RobotMap.ltMotor);
 		rtMotor = new CANTalon(RobotMap.rtMotor);
 		aMotor = new CANTalon(RobotMap.liftMotor);
 		//gyro = new AnalogGyro(RobotMap.gyro);
 	}
 	
-	public static Arm instance;
+	public static Manual instance;
 	
-	public static Arm getInstance(){
+	public static Manual getInstance(){
 		if (instance == null)
-			instance = new Arm();
+			instance = new Manual();
 		return instance;
 	}
 	
