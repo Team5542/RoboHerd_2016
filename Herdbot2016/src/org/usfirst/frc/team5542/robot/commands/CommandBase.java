@@ -14,7 +14,7 @@ public abstract class CommandBase extends Command {
 	protected static Camera camera;
 	protected static Manual arm;
 	protected static PiCamera pi;
-	protected static MotorEncoder motorEncoder;
+	protected static MotorEncoder motorencoder;
 	protected static Gyro gyro;
 	
 	public static void init(){
@@ -22,7 +22,7 @@ public abstract class CommandBase extends Command {
 		drivetrain = DriveTrain.getInstance();
 		arm = Manual.getInstance();
 		//pi = PiCamera.getInstance();
-		motorEncoder = MotorEncoder.getInstance();
+		motorencoder = MotorEncoder.getInstance();
 		gyro = Gyro.getInstance();
 	}
 }

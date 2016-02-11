@@ -19,7 +19,7 @@ public class Gyro extends PIDSubsystem {
         //                  to
         // enable() - Enables the PID controller.
     	super("Gyro",0,0,0);
-    	disable();
+    	this.disable();
     }
     
     public static Gyro instance;

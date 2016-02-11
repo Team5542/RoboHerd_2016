@@ -6,12 +6,24 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ChangeL extends Command {
+public class ChangeL extends CommandBase {
 
     public ChangeL(int input) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	OI.armlogic = input;
+    	if (input == 0){
+    		motorencoder.disable();
+    		gyro.disable();
+    	}
+    	if (input == 1){
+    		motorencoder.disable();
+    		gyro.enable();
+    	}
+    	if (input == 2 || input == 3){
+    		motorencoder.enable();
+    		gyro.disable();
+    	}
     }
 
     // Called just before this Command runs the first time

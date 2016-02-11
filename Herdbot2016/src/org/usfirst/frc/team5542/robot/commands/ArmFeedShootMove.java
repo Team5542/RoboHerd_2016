@@ -35,20 +35,17 @@ public class ArmFeedShootMove extends CommandBase {
 	    	if(0.5 >= move && move >= -.5){
 	    		arm.stop();
 	    	}
-    	}
-    	
+    	}    	
     	// Gyro/Camera Logic loop
     	if (OI.armlogic == 1){
-    	}
-    	
+    	}    	
     	// Travel low Logic loop
     	if (OI.armlogic == 2){
-    		
+    		motorencoder.lowTravel();
     	}
-    	
     	// Travel high Logic loop
     	if (OI.armlogic == 3){
-    		
+    		motorencoder.highTravel();
     	}
     }
 
