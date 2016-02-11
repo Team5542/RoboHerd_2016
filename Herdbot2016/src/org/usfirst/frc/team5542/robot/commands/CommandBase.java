@@ -14,11 +14,15 @@ public abstract class CommandBase extends Command {
 	protected static Camera camera;
 	protected static Manual arm;
 	protected static PiCamera pi;
+	protected static Encoder encoder;
+	protected static Gyro gyro;
 	
 	public static void init(){
 		//camera = Camera.getInstance();
 		drivetrain = DriveTrain.getInstance();
 		arm = Manual.getInstance();
 		//pi = PiCamera.getInstance();
+		encoder = Encoder.getInstance();
+		gyro = Gyro.getInstance();
 	}
 }

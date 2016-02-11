@@ -17,6 +17,14 @@ public class Gyro extends PIDSubsystem {
     	disable();
     }
     
+    public static Gyro instance;
+	
+    public static Gyro getInstance(){
+    	if (instance == null)
+    		instance = new Gyro();
+    	return instance;
+    }
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());

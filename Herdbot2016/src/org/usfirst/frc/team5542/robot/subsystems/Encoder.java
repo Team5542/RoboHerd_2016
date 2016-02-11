@@ -17,6 +17,14 @@ public class Encoder extends PIDSubsystem {
     	disable();
     }
     
+    public static Encoder instance;
+    
+    public static Encoder getInstance(){
+    	if (instance == null)
+    		instance = new Encoder();
+    	return instance;
+    }
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
