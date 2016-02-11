@@ -1,5 +1,8 @@
 package org.usfirst.frc.team5542.robot.subsystems;
 
+import org.usfirst.frc.team5542.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
@@ -7,6 +10,8 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 public class Gyro extends PIDSubsystem {
 
+	CANTalon motor = new CANTalon (RobotMap.liftMotor);
+	Gyro gyro;
     // Initialize your subsystem here
     public Gyro() {
         // Use these to get going:
@@ -40,5 +45,6 @@ public class Gyro extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
+    	motor.pidWrite(output);
     }
 }
