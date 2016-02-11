@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class MotorEncoder extends PIDSubsystem {
 	// Competition Robot
 	CANTalon motor = new CANTalon (RobotMap.liftMotor);
-	public Encoder motorEncoder = new Encoder(0, 0, false);
+	public Encoder motorEncoder = new Encoder(0, 0);
 	
     // Initialize your subsystem here
     public MotorEncoder() {
@@ -20,7 +20,9 @@ public class MotorEncoder extends PIDSubsystem {
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
         // enable() - Enables the PID controller.
-    	super("Encoder",0,0,0);
+    	super("Encoder", 1.0, 0, 0);
+    	this.setPercentTolerance(10);
+    	motorEncoder.setDistancePerPulse(0);
     	this.disable();
     }
     
@@ -53,7 +55,7 @@ public class MotorEncoder extends PIDSubsystem {
         // Return your input value for the PID loop
         // e.g. a sensor, like a potentiometer:
         // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    	return 0.0;
+    	return motorEncoder.getDistance();
     }
     
     protected void usePIDOutput(double output) {

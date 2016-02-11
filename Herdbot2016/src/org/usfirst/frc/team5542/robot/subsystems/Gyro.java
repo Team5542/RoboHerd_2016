@@ -2,6 +2,7 @@ package org.usfirst.frc.team5542.robot.subsystems;
 
 import org.usfirst.frc.team5542.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
@@ -11,14 +12,16 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class Gyro extends PIDSubsystem {
 
 	CANTalon motor = new CANTalon (RobotMap.liftMotor);
-	Gyro gyro;
+	AnalogGyro gyro;
     // Initialize your subsystem here
     public Gyro() {
         // Use these to get going:
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
         // enable() - Enables the PID controller.
-    	super("Gyro",0,0,0);
+    	super("Gyro", 1.0, 0, 0);
+    	this.setPercentTolerance(10);
+    	gyro = new AnalogGyro(RobotMap.gyro);
     	this.disable();
     }
     
@@ -39,7 +42,7 @@ public class Gyro extends PIDSubsystem {
         // Return your input value for the PID loop
         // e.g. a sensor, like a potentiometer:
         // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    	return 0.0;
+    	return gyro.getAngle();
     }
     
     protected void usePIDOutput(double output) {
