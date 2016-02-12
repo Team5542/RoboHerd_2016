@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class MotorEncoder extends PIDSubsystem {
 	// Competition Robot
 	CANTalon motor = new CANTalon (RobotMap.liftMotor);
-	public Encoder motorEncoder = new Encoder(0, 0);
+	public Encoder motorEncoder = new Encoder(RobotMap.enc1, RobotMap.enc2);
 	
     // Initialize your subsystem here
     public MotorEncoder() {

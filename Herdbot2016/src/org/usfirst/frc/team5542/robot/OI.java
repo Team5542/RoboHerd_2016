@@ -41,16 +41,16 @@ public class OI {
 			stick = controller2;
 		}			
 		//Controller layout
-		Button aButton = new JoystickButton(xbox, 1);
-		Button bButton = new JoystickButton(xbox, 2);
-		Button xButton = new JoystickButton(xbox, 3);
-		Button yButton = new JoystickButton(xbox, 4);
-		Button lBumper = new JoystickButton(xbox, 5);
-		Button rBumper = new JoystickButton(xbox, 6);
-		Button select = new JoystickButton(xbox, 7);
-		Button start = new JoystickButton(xbox, 8);
-		Button lStick = new JoystickButton(xbox, 9);
-		Button rStick = new JoystickButton(xbox, 10);
+		//Button aButton = new JoystickButton(xbox, 1);
+		//Button bButton = new JoystickButton(xbox, 2);
+		//Button xButton = new JoystickButton(xbox, 3);
+		//Button yButton = new JoystickButton(xbox, 4);
+		//Button lBumper = new JoystickButton(xbox, 5);
+		//Button rBumper = new JoystickButton(xbox, 6);
+		//Button select = new JoystickButton(xbox, 7);
+		//Button start = new JoystickButton(xbox, 8);
+		//Button lStick = new JoystickButton(xbox, 9);
+		//Button rStick = new JoystickButton(xbox, 10);
 		
 		//Joystick layout
 		Button trigger = new JoystickButton(stick, 1);
@@ -59,12 +59,12 @@ public class OI {
 		Button b4 = new JoystickButton(stick, 4);
 		Button b5 = new JoystickButton(stick, 5);
 		Button b6 = new JoystickButton(stick, 6);
-		Button b7 = new JoystickButton(stick, 7);
-		Button b8 = new JoystickButton(stick, 8);
-		Button b9 = new JoystickButton(stick, 9);
-		Button b10 = new JoystickButton(stick, 10);
-		Button b11 = new JoystickButton(stick, 11);
-		Button b12 = new JoystickButton(stick, 12);
+		//Button b7 = new JoystickButton(stick, 7);
+		//Button b8 = new JoystickButton(stick, 8);
+		//Button b9 = new JoystickButton(stick, 9);
+		//Button b10 = new JoystickButton(stick, 10);
+		//Button b11 = new JoystickButton(stick, 11);
+		//Button b12 = new JoystickButton(stick, 12);
 		
 		trigger.whileHeld(new Intake());
 		thumb.whileHeld(new Outake());

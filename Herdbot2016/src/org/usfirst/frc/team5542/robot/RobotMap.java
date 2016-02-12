@@ -16,6 +16,10 @@ public class RobotMap {
     //gyro
     public static int gyro = 1;
     
+    //encoder
+    public static int enc1 = 2;
+    public static int enc2 = 3;
+    
     // Throwing motors
     public static int ltMotor = 5;
     public static int rtMotor = 6;
