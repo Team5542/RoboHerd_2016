@@ -17,7 +17,7 @@ public class ChangeL extends CommandBase {
     	}
     	if (input == 1){
     		motorencoder.disable();
-    		gyro.enable();
+    		//gyro.enable();
     	}
     	if (input == 2 || input == 3){
     		motorencoder.enable();
