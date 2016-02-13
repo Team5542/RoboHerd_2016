@@ -22,7 +22,7 @@ public class MotorEncoder extends PIDSubsystem {
         // enable() - Enables the PID controller.
     	super("Encoder", 1.0, 0, 0);
     	this.setPercentTolerance(10);
-    	motorEncoder.setDistancePerPulse(0);
+    	motorEncoder.setDistancePerPulse(0.0383);
     	this.disable();
     }
     
