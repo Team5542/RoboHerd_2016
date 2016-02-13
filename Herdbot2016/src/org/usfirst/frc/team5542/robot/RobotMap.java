@@ -20,6 +20,9 @@ public class RobotMap {
     public static int enc1 = 2;
     public static int enc2 = 3;
     
+    //solenoid (controlled over the PCM)
+    public static int solenoid = 0;
+    
     // Throwing motors
     public static int ltMotor = 5;
     public static int rtMotor = 6;
