@@ -26,10 +26,10 @@ public class ArmFeedShootMove extends CommandBase {
     	// Manual Logic loop
     	if (OI.armlogic == 0){
 	    	double move = stick.getRawAxis(OI.stickY);
-	    	if(move > 0.5){
+	    	if(move < -0.5){
 	    		arm.moveDown();
 	    	}
-	    	if(move < -0.5){
+	    	if(move > 0.5){
 	    		arm.moveUp();
 	    	}
 	    	if(0.5 >= move && move >= -.5){

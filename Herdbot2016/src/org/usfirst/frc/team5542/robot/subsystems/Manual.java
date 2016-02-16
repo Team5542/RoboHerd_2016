@@ -62,11 +62,11 @@ public class Manual extends Subsystem {
 		}
 	}
 	public void moveUp(){
-		aMotor.set(0.2);
+		aMotor.set(0.5);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void moveDown(){
-		aMotor.set(-0.2);
+		aMotor.set(-0.5);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stop(){

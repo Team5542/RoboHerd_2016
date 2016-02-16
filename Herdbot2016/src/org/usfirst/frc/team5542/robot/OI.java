@@ -5,6 +5,7 @@ package org.usfirst.frc.team5542.robot;
 //import org.usfirst.frc.team5542.robot.commands.Fire;
 import org.usfirst.frc.team5542.robot.commands.ChangeL;
 import org.usfirst.frc.team5542.robot.commands.Intake;
+import org.usfirst.frc.team5542.robot.commands.Motivator;
 import org.usfirst.frc.team5542.robot.commands.Outake;
 import org.usfirst.frc.team5542.robot.commands.StopIntake;
 
@@ -59,7 +60,7 @@ public class OI {
 		Button b4 = new JoystickButton(stick, 4);
 		Button b5 = new JoystickButton(stick, 5);
 		Button b6 = new JoystickButton(stick, 6);
-		//Button b7 = new JoystickButton(stick, 7);
+		Button b7 = new JoystickButton(stick, 7);
 		//Button b8 = new JoystickButton(stick, 8);
 		//Button b9 = new JoystickButton(stick, 9);
 		//Button b10 = new JoystickButton(stick, 10);
@@ -76,6 +77,7 @@ public class OI {
 		b4.whenPressed(new ChangeL(1));
 		b5.whenPressed(new ChangeL(2));
 		b6.whenPressed(new ChangeL(3));
+		b7.whenPressed(new Motivator());
 	}
 	
 		//axis map
