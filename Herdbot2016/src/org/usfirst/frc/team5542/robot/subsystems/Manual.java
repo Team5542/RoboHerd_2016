@@ -49,16 +49,13 @@ public class Manual extends Subsystem {
 		rtMotor.set(-move);
 		if(move >= .4){
 			solenoid.set(false);
-			on = true;
 		}
 	}
 	public void solenoid(){
-		if(on){
-			solenoid.set(true);
-			on = false;
-		} else {
+		if(solenoid.get()){
 			solenoid.set(false);
-			on = true;
+		} else {
+			solenoid.set(true);
 		}
 	}
 	public void moveUp(){

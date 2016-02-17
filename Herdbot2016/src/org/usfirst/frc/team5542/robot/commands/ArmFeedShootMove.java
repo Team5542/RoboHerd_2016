@@ -24,29 +24,29 @@ public class ArmFeedShootMove extends CommandBase {
     	Joystick stick = Robot.oi.getStick();
     	
     	// Manual Logic loop
-    	if (OI.armlogic == 0){
-	    	double move = stick.getRawAxis(OI.stickY);
-	    	if(move < -0.5){
+//    	if (OI.armlogic == 0){
+    	double move = stick.getRawAxis(OI.stickY);
+	    	if(move < -0.35){
 	    		arm.moveDown();
 	    	}
-	    	if(move > 0.5){
+	    	if(move > 0.35){
 	    		arm.moveUp();
 	    	}
-	    	if(0.5 >= move && move >= -.5){
+	    	if(0.35 >= move && move >= -.35){
 	    		arm.stop();
 	    	}
-    	}    	
+    	//}    	
     	// Gyro/Camera Logic loop
-    	if (OI.armlogic == 1){
-    	}    	
+//    	if (OI.armlogic == 1){
+//    	}    	
     	// Travel low Logic loop
-    	if (OI.armlogic == 2){
-    		motorencoder.lowTravel();
-    	}
+//    	if (OI.armlogic == 2){
+//    		motorencoder.lowTravel();
+//    	}
     	// Travel high Logic loop
-    	if (OI.armlogic == 3){
-    		motorencoder.highTravel();
-    	}
+//    	if (OI.armlogic == 3){
+//    		motorencoder.highTravel();
+//    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
