@@ -16,8 +16,10 @@ public abstract class CommandBase extends Command {
 	protected static PiCamera pi;
 	protected static MotorEncoder motorencoder;
 	protected static Gyro gyro;
+	protected static SolenoidControl solenoid;
 	
 	public static void init(){
+		solenoid = SolenoidControl.getInstace();
 		//camera = Camera.getInstance();
 		drivetrain = DriveTrain.getInstance();
 		arm = Manual.getInstance();

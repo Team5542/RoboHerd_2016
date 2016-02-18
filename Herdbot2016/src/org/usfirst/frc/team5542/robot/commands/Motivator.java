@@ -13,7 +13,7 @@ public class Motivator extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	arm.solenoid();
+    	solenoid.solenoid();
     }
 
     // Called repeatedly when this Command is scheduled to run
