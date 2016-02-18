@@ -13,10 +13,10 @@ public class RobotMap {
     public static int lbMotor = 4;
     public static int rbMotor = 2;
 	
-    //gyro (analog)
+    //gyro
     public static int gyro = 1;
     
-    //encoder (analog)
+    //encoder
     public static int enc1 = 2;
     public static int enc2 = 3;
     

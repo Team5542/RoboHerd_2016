@@ -4,12 +4,10 @@ import org.usfirst.frc.team5542.robot.RobotMap;
 import org.usfirst.frc.team5542.robot.commands.ArmFeedShootMove;
 
 
-
 //import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 //import edu.wpi.first.wpilibj.interfaces.Gyro;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -24,6 +22,8 @@ public class Manual extends Subsystem {
 	private CANTalon ltMotor, rtMotor, aMotor;
 	
 	private Solenoid solenoid;
+	
+	private boolean on = true;
 	
 	//private Gyro gyro;
 	
@@ -57,7 +57,6 @@ public class Manual extends Subsystem {
 		} else {
 			solenoid.set(true);
 		}
-		SmartDashboard.putBoolean("Solenoid Value", solenoid.get());
 	}
 	public void moveUp(){
 		aMotor.set(0.5);
