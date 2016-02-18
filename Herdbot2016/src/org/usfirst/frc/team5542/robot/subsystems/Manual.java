@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5542.robot.subsystems;
 
 import org.usfirst.frc.team5542.robot.RobotMap;
-import org.usfirst.frc.team5542.robot.commands.ArmFeedShootMove;
+import org.usfirst.frc.team5542.robot.commands.ArmMove;
 
 
 //import edu.wpi.first.wpilibj.AnalogGyro;
@@ -47,16 +47,12 @@ public class Manual extends Subsystem {
 	public void intake(double move){
 		ltMotor.set(move);
 		rtMotor.set(-move);
-		if(move >= .4){
-			solenoid.set(false);
-		}
+		solenoid.set(false);
 	}
-	public void solenoid(){
-		if(solenoid.get()){
-			solenoid.set(false);
-		} else {
-			solenoid.set(true);
-		}
+	public void outtake(double move){
+		ltMotor.set(move);
+		rtMotor.set(-move);
+		solenoid.set(true);
 	}
 	public void moveUp(){
 		aMotor.set(0.5);
@@ -66,7 +62,7 @@ public class Manual extends Subsystem {
 		aMotor.set(-0.5);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
-	public void stop(){
+	public void stopActuate(){
 		//if(SmartDashboard.getNumber("Gyro") > gyro.getAngle()){
 			//aMotor.set(0.25);
 		//} else {
@@ -75,7 +71,7 @@ public class Manual extends Subsystem {
 	//}
 	
     public void initDefaultCommand() {
-        setDefaultCommand(new ArmFeedShootMove());
+        setDefaultCommand(new ArmMove());
     }
 }
 

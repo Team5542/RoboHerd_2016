@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.Joystick;
 /**
  *
  */
-public class ArmFeedShootMove extends CommandBase {
+public class ArmMove extends CommandBase {
 
-    public ArmFeedShootMove() {
+    public ArmMove() {
         // Use requires() here to declare subsystem dependencies
         requires(arm);
     }
@@ -26,27 +26,15 @@ public class ArmFeedShootMove extends CommandBase {
     	// Manual Logic loop
 //    	if (OI.armlogic == 0){
     	double move = stick.getRawAxis(OI.stickY);
-	    	if(move < -0.35){
+	    if(move < -0.35){
 	    		arm.moveDown();
-	    	}
-	    	if(move > 0.35){
+	    }
+	    if(move > 0.35){
 	    		arm.moveUp();
-	    	}
-	    	if(0.35 >= move && move >= -.35){
-	    		arm.stop();
-	    	}
-    	//}    	
-    	// Gyro/Camera Logic loop
-//    	if (OI.armlogic == 1){
-//    	}    	
-    	// Travel low Logic loop
-//    	if (OI.armlogic == 2){
-//    		motorencoder.lowTravel();
-//    	}
-    	// Travel high Logic loop
-//    	if (OI.armlogic == 3){
-//    		motorencoder.highTravel();
-//    	}
+	    }
+	    if(0.35 >= move && move >= -.35){
+	    		arm.stopActuate();
+	    }
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -56,13 +44,13 @@ public class ArmFeedShootMove extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-    	arm.stop();
+    	arm.stopActuate();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	arm.intake(0);
-    	arm.stop();
+    	arm.stopActuate();
     }
 }

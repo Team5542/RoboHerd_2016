@@ -77,7 +77,7 @@ public class OI {
 		b4.whenPressed(new ChangeL(1));
 		b5.whenPressed(new ChangeL(2));
 		b6.whenPressed(new ChangeL(3));
-		b7.whenPressed(new Motivator());
+		//b7.whenPressed(new Motivator());
 	}
 	
 		//axis map
