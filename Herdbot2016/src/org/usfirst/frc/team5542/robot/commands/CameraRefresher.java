@@ -18,7 +18,6 @@ public class CameraRefresher extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	cameraR.refreshCamera();
-    	Timer.delay(.5);
     }
 
     // Make this return true when this Command no longer needs to run execute()
