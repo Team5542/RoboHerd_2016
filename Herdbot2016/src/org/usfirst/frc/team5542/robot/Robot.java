@@ -46,6 +46,8 @@ public class Robot extends IterativeRobot {
         //chooser = new SendableChooser();
         //chooser.addObject("My Auto", new MyAutoCommand());
         //SmartDashboard.putData("Auto mode", chooser);
+    }
+    public void updateCamera(){
         NIVision.IMAQdxGrab(session, frame, 1);
         CameraServer.getInstance().setImage(frame);
     }
