@@ -7,6 +7,7 @@ import org.usfirst.frc.team5542.robot.commands.ArmMove;
 //import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 //import edu.wpi.first.wpilibj.interfaces.Gyro;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -52,6 +53,7 @@ public class Manual extends Subsystem {
 	public void outtake(double move){
 		ltMotor.set(move);
 		rtMotor.set(-move);
+		Timer.delay(.8);
 		solenoid.set(true);
 	}
 	public void moveUp(){

@@ -11,7 +11,7 @@ public class Outake extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	arm.intake(-.5);
+    	arm.intake(-1);
     }
 
     // Called repeatedly when this Command is scheduled to run
