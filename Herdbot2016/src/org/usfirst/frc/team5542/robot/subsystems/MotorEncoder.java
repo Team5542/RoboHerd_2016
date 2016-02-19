@@ -48,7 +48,7 @@ public class MotorEncoder extends PIDSubsystem {
     // Sets pid goal to travel for going over objects
     // !!! NEED TO DETERMINE THIS VALUE !!!
     public void highTravel(){
-    	this.setSetpoint(25);
+    	this.setSetpoint(2.5);
     }
         
     protected double returnPIDInput() {
@@ -61,5 +61,6 @@ public class MotorEncoder extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
+    	motor.set(output);
     }
 }
