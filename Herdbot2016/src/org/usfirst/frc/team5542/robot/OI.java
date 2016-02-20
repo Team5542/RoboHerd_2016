@@ -5,8 +5,6 @@ package org.usfirst.frc.team5542.robot;
 //import org.usfirst.frc.team5542.robot.commands.Fire;
 import org.usfirst.frc.team5542.robot.commands.ChangeL;
 import org.usfirst.frc.team5542.robot.commands.Intake;
-import org.usfirst.frc.team5542.robot.commands.Motivator;
-import org.usfirst.frc.team5542.robot.commands.Outake;
 import org.usfirst.frc.team5542.robot.commands.StopIntake;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -60,15 +58,15 @@ public class OI {
 		Button b4 = new JoystickButton(stick, 4);
 		Button b5 = new JoystickButton(stick, 5);
 		Button b6 = new JoystickButton(stick, 6);
-		Button b7 = new JoystickButton(stick, 7);
+		//Button b7 = new JoystickButton(stick, 7);
 		//Button b8 = new JoystickButton(stick, 8);
 		//Button b9 = new JoystickButton(stick, 9);
 		//Button b10 = new JoystickButton(stick, 10);
 		//Button b11 = new JoystickButton(stick, 11);
 		//Button b12 = new JoystickButton(stick, 12);
 		
-		trigger.whileHeld(new Intake());
-		thumb.whileHeld(new Outake());
+		trigger.whileHeld(new Intake(.5));
+		thumb.whileHeld(new Intake(-1));
 		trigger.whenReleased(new StopIntake());
 		thumb.whenReleased(new StopIntake());
 		

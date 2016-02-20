@@ -7,10 +7,9 @@ import org.usfirst.frc.team5542.robot.commands.ArmMove;
 //import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 //import edu.wpi.first.wpilibj.interfaces.Gyro;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -23,8 +22,6 @@ public class Manual extends Subsystem {
 	private CANTalon ltMotor, rtMotor, aMotor;
 	
 	private Solenoid solenoid;
-	
-	private boolean on = true;
 	
 	//private Gyro gyro;
 	
@@ -48,14 +45,14 @@ public class Manual extends Subsystem {
 	public void intake(double move){
 		ltMotor.set(move);
 		rtMotor.set(-move);
+		if(move >= 0){
 		solenoid.set(false);
+		} else {
+			solenoid.set(true);
+		}
+		SmartDashboard.putBoolean("Motivator", solenoid.get());
 	}
-	public void outtake(double move){
-		ltMotor.set(move);
-		rtMotor.set(-move);
-		Timer.delay(.8);
-		solenoid.set(true);
-	}
+	
 	public void move(double value){
 		aMotor.set(value);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());

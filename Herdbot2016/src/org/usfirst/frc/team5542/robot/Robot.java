@@ -3,9 +3,6 @@ package org.usfirst.frc.team5542.robot;
 
 import org.usfirst.frc.team5542.robot.commands.CommandBase;
 
-import com.ni.vision.NIVision;
-import com.ni.vision.NIVision.Image;
-
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -29,8 +26,6 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     SendableChooser chooser;
     
-    int session;
-    Image frame;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -43,9 +38,6 @@ public class Robot extends IterativeRobot {
         //chooser = new SendableChooser();
         //chooser.addObject("My Auto", new MyAutoCommand());
         //SmartDashboard.putData("Auto mode", chooser);
-    }
-    public void updateCamera(){
-    	
     }
 	
 	/**
