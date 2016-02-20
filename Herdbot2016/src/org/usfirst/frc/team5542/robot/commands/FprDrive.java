@@ -32,7 +32,7 @@ public class FprDrive extends CommandBase {
     		z = 0;
     	}
     	SmartDashboard.putNumber("Move Value", y);
-    	SmartDashboard.putNumber("Turn Value", z);
+    	SmartDashboard.putNumber("Turn Value", -z);
     	drivetrain.fprDrive(y, z);
     }
 
