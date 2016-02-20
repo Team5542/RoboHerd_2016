@@ -6,6 +6,8 @@ import org.usfirst.frc.team5542.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -17,7 +19,7 @@ public class ArmMove extends CommandBase {
     public ArmMove() {
         // Use requires() here to declare subsystem dependencies
         requires(arm);
-        requires(motorencoder);
+        //requires(motorencoder);
         //encoder = new Encoder(RobotMap.enc1, RobotMap.enc2);
     }
 
@@ -29,16 +31,17 @@ public class ArmMove extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Joystick stick = Robot.oi.getStick();
-    	
+    	PowerDistributionPanel pdp = new PowerDistributionPanel();
+    	SmartDashboard.putNumber("Motor current", pdp.getCurrent(12));
     	// Manual Logic loop
 //    	if (OI.armlogic == 0){
     	double move = stick.getRawAxis(OI.stickY);
 	    if(move < -0.35){
-	    		arm.moveDown();
+	    		arm.move(move);
 	    		//motorencoder.disable();
 	    }
 	    if(move > 0.35){
-	    		arm.moveUp();
+	    		arm.move(move);
 	    		//motorencoder.disable();
 	    }
 	    if(0.35 >= move && move >= -.35){

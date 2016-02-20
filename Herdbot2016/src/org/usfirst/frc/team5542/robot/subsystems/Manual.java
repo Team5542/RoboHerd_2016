@@ -56,12 +56,8 @@ public class Manual extends Subsystem {
 		Timer.delay(.8);
 		solenoid.set(true);
 	}
-	public void moveUp(){
-		aMotor.set(0.5);
-		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
-	}
-	public void moveDown(){
-		aMotor.set(-0.5);
+	public void move(double value){
+		aMotor.set(value);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stopActuate(){
