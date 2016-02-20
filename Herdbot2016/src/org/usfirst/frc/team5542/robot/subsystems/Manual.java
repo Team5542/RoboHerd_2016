@@ -4,9 +4,11 @@ import org.usfirst.frc.team5542.robot.RobotMap;
 import org.usfirst.frc.team5542.robot.commands.ArmMove;
 
 
+
 //import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 //import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -48,6 +50,7 @@ public class Manual extends Subsystem {
 		if(move >= 0){
 		solenoid.set(false);
 		} else {
+			Timer.delay(.7);
 			solenoid.set(true);
 		}
 		SmartDashboard.putBoolean("Motivator", solenoid.get());
