@@ -2,14 +2,16 @@
 package org.usfirst.frc.team5542.robot;
 
 import org.usfirst.frc.team5542.robot.commands.CommandBase;
+import org.usfirst.frc.team5542.robot.commands.auto.AutoBase;
 
-//import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-//import edu.wpi.first.wpilibj.vision.USBCamera;
+import edu.wpi.first.wpilibj.vision.USBCamera;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -26,6 +28,8 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     SendableChooser chooser;
     
+	AutoBase auto;
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -33,8 +37,12 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	CommandBase.init();
 		oi = new OI();
-        //USBCamera camera = new USBCamera();
-        //CameraServer.getInstance().startAutomaticCapture(camera);
+        USBCamera camera = new USBCamera();
+        camera.setFPS(15);
+        camera.setSize(320, 240);
+        CameraServer server = CameraServer.getInstance();
+        server.setQuality(50);
+        server.startAutomaticCapture(camera);
         //chooser = new SendableChooser();
         //chooser.addObject("My Auto", new MyAutoCommand());
         //SmartDashboard.putData("Auto mode", chooser);
@@ -77,7 +85,9 @@ public class Robot extends IterativeRobot {
 		} */
     	
     	// schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+    	AutoBase.initAuto();
+    	Timer.delay(15);
+    	auto.cancel();
     }
 
     /**
