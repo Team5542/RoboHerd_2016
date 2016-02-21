@@ -8,10 +8,10 @@ package org.usfirst.frc.team5542.robot;
 public class RobotMap {
 	// Driver motors, with l=left, r=right, f=front, b=back
     
-	public static int lfMotor = 3;
-    public static int rfMotor = 1;
-    public static int lbMotor = 4;
-    public static int rbMotor = 2;
+	public static int lfMotor = 10;
+    public static int rfMotor = 8;
+    public static int lbMotor = 11;
+    public static int rbMotor = 9;
 	
     //gyro
     public static int gyro = 1;

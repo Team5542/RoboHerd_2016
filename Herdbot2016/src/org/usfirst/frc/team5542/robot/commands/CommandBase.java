@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
 public abstract class CommandBase extends Command {
 
 	protected static DriveTrain drivetrain;
-	protected static Camera camera;
+	//protected static Camera camera;
 	protected static Manual arm;
-	protected static PiCamera pi;
+	//protected static PiCamera pi;
 	protected static MotorEncoder motorencoder;
 	protected static Gyro gyro;
 	
