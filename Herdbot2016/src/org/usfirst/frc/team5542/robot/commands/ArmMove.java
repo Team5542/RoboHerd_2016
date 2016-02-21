@@ -34,7 +34,7 @@ public class ArmMove extends CommandBase {
     	SmartDashboard.putNumber("Motor current", pdp.getCurrent(12));
     	// Manual Logic loop
 //    	if (OI.armlogic == 0){
-    	double move = stick.getRawAxis(OI.stickY);
+    	double move = -stick.getRawAxis(OI.stickY);
 	    if(move < -0.35){
 	    		arm.move(move);
 	    		//motorencoder.disable();
