@@ -32,25 +32,18 @@ public class ArmMove extends CommandBase {
     	Joystick stick = Robot.oi.getStick();
     	PowerDistributionPanel pdp = new PowerDistributionPanel();
     	SmartDashboard.putNumber("Motor current", pdp.getCurrent(12));
-    	// Manual Logic loop
-//    	if (OI.armlogic == 0){
+    	
     	double move = -stick.getRawAxis(OI.stickY);
-	    if(move < -0.35){
-	    		arm.move(move);
-	    		//motorencoder.disable();
+	    if(0.10 >= move && move >= -.10){
+    		//arm.stopActuate();
+	    	motorencoder.setSetpoint(motorencoder.getPosition());
+	    	motorencoder.enable();
 	    }
-	    if(move > 0.35){
-	    		arm.move(move);
-	    		//motorencoder.disable();
-	    }
-	    if(0.35 >= move && move >= -.35){
-	    		arm.stopActuate();
-	    		
-	    		//motorencoder.setSetpoint(encoder.getDistance());
-	    		//motorencoder.enable();
+	    else{
+	    	arm.move(move*move*move);
+	    	motorencoder.disable();
 	    }
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
@@ -64,7 +57,6 @@ public class ArmMove extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	arm.intake(0);
     	arm.stopActuate();
     }
 }

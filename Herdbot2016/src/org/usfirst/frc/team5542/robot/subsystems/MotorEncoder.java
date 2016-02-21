@@ -13,6 +13,7 @@ public class MotorEncoder extends PIDSubsystem {
 	// Competition Robot
 	CANTalon motor = new CANTalon (RobotMap.liftMotor);
 	public Encoder motorEncoder = new Encoder(RobotMap.enc1, RobotMap.enc2);
+	int tolerance = 10;
 	
     // Initialize your subsystem here
     public MotorEncoder() {
@@ -21,7 +22,7 @@ public class MotorEncoder extends PIDSubsystem {
         //                  to
         // enable() - Enables the PID controller.
     	super("Encoder", 1.0, 0, 0);
-    	this.setPercentTolerance(10);
+    	this.setPercentTolerance(tolerance);
     	motorEncoder.setDistancePerPulse(0.0383);
     	this.disable();
     }

@@ -31,6 +31,9 @@ public class FprDrive extends CommandBase {
     	if(z < 0.10 && z > -0.10){
     		z = 0;
     	}
+    	
+    	// Changes sensitivity of the turn value
+    	z = z*z*z;
     	SmartDashboard.putNumber("Move Value", y);
     	SmartDashboard.putNumber("Turn Value", -z);
     	drivetrain.fprDrive(y, z);
