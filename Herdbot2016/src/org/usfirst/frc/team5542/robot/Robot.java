@@ -6,13 +6,12 @@ import org.usfirst.frc.team5542.robot.commands.auto.AutoBase;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.vision.USBCamera;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,9 +26,7 @@ public class Robot extends IterativeRobot {
 
     Command autonomousCommand;
     SendableChooser chooser;
-    
-	AutoBase auto;
-    
+    public static AutoBase auto;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -43,9 +40,9 @@ public class Robot extends IterativeRobot {
         CameraServer server = CameraServer.getInstance();
         server.setQuality(50);
         server.startAutomaticCapture(camera);
-        //chooser = new SendableChooser();
-        //chooser.addObject("My Auto", new MyAutoCommand());
-        //SmartDashboard.putData("Auto mode", chooser);
+        chooser = new SendableChooser();
+        chooser.addObject("My Auto", auto);
+        SmartDashboard.putData("Auto mode", chooser);
     }
 	
 	/**
@@ -71,23 +68,22 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-        //autonomousCommand = (Command) chooser.getSelected();
         //No clue what sam is thinking here
-		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		 String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
-		case "My Auto":
-			autonomousCommand = new MyAutoCommand();
-			break;
-		case "Default Auto":
-		default:
-			autonomousCommand = new ExampleCommand();
-			break;
-		} */
+		case "My Auto":{
+			AutoBase.initAuto();
+		}
+			
+		case "Default Auto":{
+			
+		}
+		default:{
+			
+		}
+		}
     	
     	// schedule the autonomous command (example)
-    	AutoBase.initAuto();
-    	Timer.delay(15);
-    	auto.cancel();
     }
 
     /**
