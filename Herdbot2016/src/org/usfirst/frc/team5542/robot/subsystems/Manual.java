@@ -25,6 +25,8 @@ public class Manual extends Subsystem {
 	
 	private Solenoid solenoid;
 	
+	double encoderPos;
+	
 	//private Gyro gyro;
 	
 	private Manual(){
@@ -32,6 +34,7 @@ public class Manual extends Subsystem {
 		rtMotor = new CANTalon(RobotMap.rtMotor);
 		aMotor = new CANTalon(RobotMap.liftMotor);
 		solenoid = new Solenoid(RobotMap.solenoid);
+		encoderPos = aMotor.get();
 		//gyro = new AnalogGyro(RobotMap.gyro);
 	}
 	
@@ -57,7 +60,9 @@ public class Manual extends Subsystem {
 	}
 	
 	public void move(double value){
-		aMotor.set(value);
+		if(encoderPos <= 50 && encoderPos >= -10){
+			aMotor.set(value);
+		}
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stopActuate(){
