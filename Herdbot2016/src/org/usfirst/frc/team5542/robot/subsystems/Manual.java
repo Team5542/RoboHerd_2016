@@ -63,6 +63,7 @@ public class Manual extends Subsystem {
 		if(encoderPos <= 50 && encoderPos >= -10){
 			aMotor.set(value);
 		}
+		SmartDashboard.putNumber("Encoder possition", encoderPos);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stopActuate(){
