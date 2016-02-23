@@ -33,7 +33,7 @@ public class FprDrive extends CommandBase {
     	}
     	
     	// Changes sensitivity of the turn value
-    	z = z*z*z;
+    	z = Math.abs(z)*z;
     	SmartDashboard.putNumber("Move Value", y);
     	SmartDashboard.putNumber("Turn Value", -z);
     	drivetrain.fprDrive(y, z);
