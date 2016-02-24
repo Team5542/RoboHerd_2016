@@ -36,12 +36,12 @@ public class ArmMove extends CommandBase {
     	double move = -stick.getRawAxis(OI.stickY);
 	    if(0.10 >= move && move >= -.10){
     		//arm.stopActuate();
-	    	motorencoder.setSetpoint(motorencoder.getPosition());
-	    	motorencoder.enable();
+	    	//motorencoder.setSetpoint(motorencoder.getPosition());
+	    	//motorencoder.enable();
 	    }
 	    else{
-	    	arm.move(move*move*move);
-	    	motorencoder.disable();
+	    	arm.move(Math.abs(move) * move);
+	    	//motorencoder.disable();
 	    }
     }
     // Make this return true when this Command no longer needs to run execute()

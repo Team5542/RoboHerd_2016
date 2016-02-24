@@ -60,10 +60,10 @@ public class Manual extends Subsystem {
 	}
 	
 	public void move(double value){
-		if(encoderPos <= 50 && encoderPos >= -10){
+		//if(encoderPos <= 50 && encoderPos >= -10){
 			aMotor.set(value);
-		}
-		SmartDashboard.putNumber("Encoder possition", encoderPos);
+		//}
+		//SmartDashboard.putNumber("Encoder possition", encoderPos);
 		//SmartDashboard.putNumber("Gyro", gyro.getAngle());
 	}
 	public void stopActuate(){
