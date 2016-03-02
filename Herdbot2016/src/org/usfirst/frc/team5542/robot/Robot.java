@@ -69,20 +69,19 @@ public class Robot extends IterativeRobot {
 	 */
     public void autonomousInit() {
         //No clue what sam is thinking here
-		 String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
-		case "My Auto":{
-			AutoBase.initAuto();
+			case "My Auto":{
+				AutoBase.initAuto();
+			}	
+			case "Default Auto":{
+				
+			}
+			default:{
+				
+			}
 		}
-			
-		case "Default Auto":{
-			
-		}
-		default:{
-			
-		}
-		}
-    	
+	    	
     	// schedule the autonomous command (example)
     }
 
