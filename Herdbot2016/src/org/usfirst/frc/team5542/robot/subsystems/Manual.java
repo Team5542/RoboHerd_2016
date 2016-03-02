@@ -59,6 +59,10 @@ public class Manual extends Subsystem {
 		SmartDashboard.putBoolean("Motivator", solenoid.get());
 	}
 	
+	public void switchMotivator(){
+		solenoid.set(!solenoid.get());
+	}
+	
 	public void move(double value){
 		//if(encoderPos <= 50 && encoderPos >= -10){
 			aMotor.set(value);

@@ -2,6 +2,7 @@ package org.usfirst.frc.team5542.robot;
 
 //import org.usfirst.frc.team5542.robot.commands.CenterCamera;
 import org.usfirst.frc.team5542.robot.commands.Intake;
+import org.usfirst.frc.team5542.robot.commands.Motivator;
 import org.usfirst.frc.team5542.robot.commands.StopIntake;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -72,7 +73,7 @@ public class OI {
 		//b4.whenPressed(new ChangeL(1));
 		//b5.whenPressed(new ChangeL(2));
 		//b6.whenPressed(new ChangeL(3));
-		//b7.whenPressed(new Motivator());
+		b3.whenPressed(new Motivator());
 	}
 	
 		//axis map
