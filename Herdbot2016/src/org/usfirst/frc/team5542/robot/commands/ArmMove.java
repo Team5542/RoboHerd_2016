@@ -29,6 +29,9 @@ public class ArmMove extends CommandBase {
 	    	move = 0;
 	    }
 
+    	//Use this to activate limit switch functionality. Ask Chris
+    	//about setting up the limit switch for high/low and stuff. 
+    	
 	    /*if (arm.limitSwitch.get() && (move > 0)){
 	    	move = 0;
 	    }

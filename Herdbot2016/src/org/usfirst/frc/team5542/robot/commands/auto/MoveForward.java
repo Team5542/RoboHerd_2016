@@ -7,7 +7,7 @@ package org.usfirst.frc.team5542.robot.commands.auto;
 public class MoveForward extends AutoBase {
 	
     long startTime;
-    int time = 15000;
+    int time = 10000;
 	
 	public MoveForward() {
         // Use requires() here to declare subsystem dependencies

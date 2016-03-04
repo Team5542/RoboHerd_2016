@@ -12,6 +12,7 @@ public abstract class AutoBase extends CommandBase {
 	public static void initAuto(){
 		motorencoder.motorEncoder.reset();
 		motorencoder.setSetpoint(280000);
+		motorencoder.enable();
 		MoveForward move = new MoveForward();
 		Timer.delay(4);
 		move.start();

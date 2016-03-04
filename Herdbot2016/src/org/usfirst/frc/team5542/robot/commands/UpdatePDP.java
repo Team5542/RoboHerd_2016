@@ -15,7 +15,8 @@ public class UpdatePDP extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	pdp.update();
+    	//Again, was getting errors here yesterday. Don't think these are needed anymore. 
+    	//pdp.update();
     }
 
     // Make this return true when this Command no longer needs to run execute()
