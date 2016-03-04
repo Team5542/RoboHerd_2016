@@ -5,8 +5,11 @@ package org.usfirst.frc.team5542.robot.commands.auto;
  *
  */
 public class MoveForward extends AutoBase {
-
-    public MoveForward() {
+	
+    long startTime;
+    int time = 15000;
+	
+	public MoveForward() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires (drivetrain);
@@ -14,6 +17,7 @@ public class MoveForward extends AutoBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	startTime = System.currentTimeMillis();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -23,7 +27,7 @@ public class MoveForward extends AutoBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return moveOff;
+        return ((System.currentTimeMillis() - startTime) >= time);
     }
 
     // Called once after isFinished returns true

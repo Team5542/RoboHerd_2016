@@ -7,6 +7,7 @@ import org.usfirst.frc.team5542.robot.commands.ArmMove;
 
 //import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,10 +23,9 @@ public class Manual extends Subsystem {
     // here. Call these from Commands.
 	
 	private CANTalon ltMotor, rtMotor, aMotor;
-	
 	private Solenoid solenoid;
-	
 	double encoderPos;
+	public DigitalInput limitSwitch;
 	
 	//private Gyro gyro;
 	
@@ -36,6 +36,7 @@ public class Manual extends Subsystem {
 		solenoid = new Solenoid(RobotMap.solenoid);
 		encoderPos = aMotor.get();
 		//gyro = new AnalogGyro(RobotMap.gyro);
+		limitSwitch  = new DigitalInput(RobotMap.limit);
 	}
 	
 	public static Manual instance;
@@ -57,6 +58,7 @@ public class Manual extends Subsystem {
 			solenoid.set(true);
 		}
 		SmartDashboard.putBoolean("Motivator", solenoid.get());
+		
 	}
 	
 	public void switchMotivator(){

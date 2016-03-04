@@ -9,17 +9,11 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public abstract class AutoBase extends CommandBase {
 	
-	protected static boolean calebrationOff = false;
-	protected static boolean moveOff = false;
-	
 	public static void initAuto(){
-		Calebrate cal = new Calebrate();
+		motorencoder.motorEncoder.reset();
+		motorencoder.setSetpoint(280000);
 		MoveForward move = new MoveForward();
-		cal.start();
-		Timer.delay(3);
-		calebrationOff = true;
+		Timer.delay(4);
 		move.start();
-		Timer.delay(12);
-		moveOff = true;
 	}
 }

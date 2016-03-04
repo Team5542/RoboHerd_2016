@@ -5,6 +5,7 @@ import org.usfirst.frc.team5542.robot.commands.CommandBase;
 import org.usfirst.frc.team5542.robot.commands.auto.AutoBase;
 
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -35,10 +36,10 @@ public class Robot extends IterativeRobot {
     	CommandBase.init();
 		oi = new OI();
         USBCamera camera = new USBCamera();
-        camera.setFPS(15);
+        camera.setFPS(11);
         camera.setSize(320, 240);
         CameraServer server = CameraServer.getInstance();
-        server.setQuality(50);
+        server.setQuality(10);
         server.startAutomaticCapture(camera);
         chooser = new SendableChooser();
         chooser.addObject("My Auto", auto);
@@ -68,8 +69,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-        //No clue what sam is thinking here
-		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		String autoSelected = SmartDashboard.getString("Auto Mode", "Default");
 		switch(autoSelected) {
 			case "My Auto":{
 				AutoBase.initAuto();
@@ -78,7 +78,7 @@ public class Robot extends IterativeRobot {
 				
 			}
 			default:{
-				
+				AutoBase.initAuto();
 			}
 		}
 	    	

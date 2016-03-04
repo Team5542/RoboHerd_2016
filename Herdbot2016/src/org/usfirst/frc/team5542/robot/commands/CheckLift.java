@@ -24,13 +24,16 @@ public class CheckLift extends CommandBase {
     protected void initialize() {
     	Joystick stick = Robot.oi.getStick();
     	double move = -stick.getRawAxis(OI.stickY);
-	    if(0.10 >= move && move >= -.10){
+	    if(move <= 0.10 && move >= -0.10){
 	    	motorencoder.setSetpoint(motorencoder.getPosition());
 	    	motorencoder.enable();
 	    }
-   	
-    	PowerDistributionPanel pdp = new PowerDistributionPanel();
-    	SmartDashboard.putNumber("Motor current", pdp.getCurrent(12));
+	    else{
+	    	motorencoder.disable();
+	    }
+    	//PowerDistributionPanel pdp = new PowerDistributionPanel();
+    	//SmartDashboard.putNumber("Motor current", pdp.getCurrent(12));
+    	SmartDashboard.putNumber("Encoder position", motorencoder.getPosition());
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -39,7 +42,7 @@ public class CheckLift extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

@@ -12,12 +12,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class PDPvalues extends Subsystem {
     PowerDistributionPanel pdp = new PowerDistributionPanel();
     public void update(){
-    	for(int i = 0; i <=24; i++){
+    	for(int i = 0; i <=11; i++){
     		String chanelName = "chanel" + i;
     		double current = pdp.getCurrent(i);
     		SmartDashboard.putNumber(chanelName, current);
     	}
     }
+    
     protected static PDPvalues instance;
     public static PDPvalues getInstance(){
     	if(instance == null){

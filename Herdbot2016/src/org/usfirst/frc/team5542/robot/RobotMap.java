@@ -15,6 +15,9 @@ public class RobotMap {
 	
     //gyro
     public static int gyro = 1;
+
+    //limit switch
+    public static int limit = 0;
     
     //encoder
     public static int enc1 = 2;

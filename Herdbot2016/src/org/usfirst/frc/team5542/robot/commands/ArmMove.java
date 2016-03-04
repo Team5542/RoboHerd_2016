@@ -25,11 +25,17 @@ public class ArmMove extends CommandBase {
     	Joystick stick = Robot.oi.getStick();
     	double move = -stick.getRawAxis(OI.stickY);
 	    
-    	if(0.10 >= move && move >= -.10){
+    	if(move <= 0.10 && move >= -.10){
 	    	move = 0;
 	    }
 
-	    arm.move(Math.abs(move) * move);
+	    /*if (arm.limitSwitch.get() && (move > 0)){
+	    	move = 0;
+	    }
+	    */
+    	else{
+	    	arm.move(Math.abs(move) * move);
+	    }
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
