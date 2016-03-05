@@ -42,7 +42,9 @@ public class Robot extends IterativeRobot {
         server.setQuality(10);
         server.startAutomaticCapture(camera);
         chooser = new SendableChooser();
-        chooser.addObject("My Auto", auto);
+        chooser.addObject("Rock Auto", auto);
+        chooser.addObject("Low auto", auto);
+        chooser.addObject("Moat Auto", auto);
         SmartDashboard.putData("Auto mode", chooser);
     }
 	
@@ -71,14 +73,17 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
 		String autoSelected = SmartDashboard.getString("Auto Mode", "Default");
 		switch(autoSelected) {
-			case "My Auto":{
-				AutoBase.initAuto();
+			case "Rock Auto":{
+				AutoBase.initAutoRock();
 			}	
-			case "Default Auto":{
-				
+			case "Low Auto":{
+				AutoBase.initAutoLow();
+			}
+			case "Moat Auto":{
+				AutoBase.initAutoMoat();
 			}
 			default:{
-				AutoBase.initAuto();
+				AutoBase.initAutoRock();
 			}
 		}
 	    	

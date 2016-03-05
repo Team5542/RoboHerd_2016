@@ -16,11 +16,11 @@ public class PDPvalues extends Subsystem {
     	//Commented this out due to errors yesterday. Was getting errors about 
     	//channel 12 not functioning correctly, so not sure if you still want these up.
     	
-    	/*for(int i = 0; i <=11; i++){
+    	for(int i = 0; i <=15; i++){
     		String chanelName = "chanel" + i;
     		double current = pdp.getCurrent(i);
     		SmartDashboard.putNumber(chanelName, current);
-    	}*/
+    	}
     }
     
     protected static PDPvalues instance;
@@ -31,7 +31,7 @@ public class PDPvalues extends Subsystem {
     	return instance;
     }
     public void initDefaultCommand() {
-//        setDefaultCommand(new UpdatePDP());
+        setDefaultCommand(new UpdatePDP());
     }
 }
 

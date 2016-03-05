@@ -66,6 +66,7 @@ public class Manual extends Subsystem {
 	}
 	
 	public void move(double value){
+		
 		//if(encoderPos <= 50 && encoderPos >= -10){
 			aMotor.set(value);
 		//}

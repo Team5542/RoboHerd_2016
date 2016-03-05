@@ -1,18 +1,17 @@
 package org.usfirst.frc.team5542.robot.commands.auto;
 
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class MoveForward extends AutoBase {
-	
-    long startTime;
-    int time = 10000;
-	
-	public MoveForward() {
+public class MoveForwardMoat extends AutoBase {
+	long time = 4000;
+	long startTime;
+    public MoveForwardMoat() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires (drivetrain);
+    	requires(drivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +21,7 @@ public class MoveForward extends AutoBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	drivetrain.fprDrive(.5, 0);
+    	drivetrain.fprDrive(.8, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

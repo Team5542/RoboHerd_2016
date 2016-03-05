@@ -8,13 +8,24 @@ import edu.wpi.first.wpilibj.Timer;
  *
  */
 public abstract class AutoBase extends CommandBase {
+
+	static MoveArm moveArm = new MoveArm();
+	public static void initAutoRock(){
+		MoveForwardRock move = new MoveForwardRock();
+		move.start();
+		Timer.delay(3.5);
+		moveArm.start();
+	}
+
+	public static void initAutoLow() {
+		moveArm.start();
+		Timer.delay(1);
+		MoveForwardLow move = new MoveForwardLow();
+		move.start();
+	}
 	
-	public static void initAuto(){
-		motorencoder.motorEncoder.reset();
-		motorencoder.setSetpoint(280000);
-		motorencoder.enable();
-		MoveForward move = new MoveForward();
-		Timer.delay(4);
+	public static void initAutoMoat(){
+		MoveForwardMoat move = new MoveForwardMoat();
 		move.start();
 	}
 }

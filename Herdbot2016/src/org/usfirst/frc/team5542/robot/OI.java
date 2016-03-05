@@ -21,22 +21,20 @@ public class OI {
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
-	Joystick xbox;
-	Joystick stick;
-	Joystick controller1 = new Joystick(0);
-	Joystick controller2 = new Joystick(1);
+	Joystick xbox = new Joystick(0);
+	Joystick stick = new Joystick(1);
 	
 	public OI(){
-		if(controller1.getIsXbox()){
-			xbox = controller1;
-		} else {
-			stick = controller1;
-		}
-		if(controller2.getIsXbox()){
-			xbox = controller2;
-		} else {
-			stick = controller2;
-		}			
+		//if(controller1.getIsXbox()){
+			//xbox = controller1;
+		//} else {
+			//stick = controller1;
+		//}
+		//if(controller2.getIsXbox()){
+			//xbox = controller2;
+		//} else {
+			//stick = controller2;
+		//}			
 		//Controller layout
 		//Button aButton = new JoystickButton(xbox, 1);
 		//Button bButton = new JoystickButton(xbox, 2);

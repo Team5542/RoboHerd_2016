@@ -1,35 +1,33 @@
 package org.usfirst.frc.team5542.robot.commands.auto;
 
-import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class MoveArm extends AutoBase {
+public class MoveForwardRock extends AutoBase {
 	
-	long startTime;
-	long runTime;
+    long startTime;
+    long time = 3000;//in ms the time we move for
 	
-    public MoveArm() {
+	public MoveForwardRock() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(motorencoder);
+    	requires (drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	startTime = System.currentTimeMillis();
-    	runTime = 1000;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	arm.move(-.5);
+    	drivetrain.fprDrive(1, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return ((System.currentTimeMillis() - startTime) >= runTime);
+        return ((System.currentTimeMillis() - startTime) >= time);
     }
 
     // Called once after isFinished returns true

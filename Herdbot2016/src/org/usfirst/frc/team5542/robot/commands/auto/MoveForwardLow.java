@@ -5,31 +5,28 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class MoveArm extends AutoBase {
-	
+public class MoveForwardLow extends AutoBase {
+	long time = 5000;
 	long startTime;
-	long runTime;
-	
-    public MoveArm() {
+    public MoveForwardLow() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(motorencoder);
+    	requires(drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	startTime = System.currentTimeMillis();
-    	runTime = 1000;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	arm.move(-.5);
+    	drivetrain.fprDrive(-.5, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return ((System.currentTimeMillis() - startTime) >= runTime);
+        return ((System.currentTimeMillis() - startTime) >= time);
     }
 
     // Called once after isFinished returns true
